@@ -1,0 +1,104 @@
+Quais são as entidades necessárias?
+    As entidades necessárias são:
+        Empresa: Representa uma empresa e suas informações básicas.
+        Colaborador: Representa um colaborador de uma empresa e suas informações básicas.
+        Tecnologia: Representa uma tecnologia utilizada pela empresa.
+
+Quais são os principais campos e seus respectivos tipos?
+    Os principais campos e seus respectivos tipos são:
+        Empresa:
+            cod_empresa (chave primária, INT)
+            cnpj (VARCHAR(14))
+            nome (VARCHAR(255))
+            area_atuacao (VARCHAR(255))
+            endereco (VARCHAR(255))
+            telefone (VARCHAR(20))
+            email (VARCHAR(255))
+            cod_tecnologia (chave estrangeira, INT)
+        Colaborador:
+            cod_colaborador (chave primária, INT)
+            nome (VARCHAR(255))
+            cargo (VARCHAR(255))
+            email (VARCHAR(255))
+            setor (VARCHAR(255))
+            telefone (VARCHAR(20))
+            cod_empresa (chave estrangeira, INT)
+        Tecnologia:
+            cod_tecnologia (chave primária, INT)
+            nome (VARCHAR(255))
+            area (VARCHAR(255))
+            descricao (TEXT)
+
+Como essas entidades estão relacionadas?    
+    As entidades estão relacionadas da seguinte forma:
+        Uma empresa pode ter de zero a muitos colaboradores (0,n).
+        Um colaborador deve estar associado a exatamente uma empresa (1,1).
+        Uma empresa deve utilizar pelo menos uma tecnologia e no máximo uma tecnologia (1,1).
+        Uma tecnologia pode estar associada a várias empresas ou a nenhuma empresa (0,n).
+
+Simule 2 registros para cada entidade.
+    *Tecnologia:*
+
+    1. cod_tecnologia: 001
+    - nome: Inteligência Artificial
+    - area: Computação
+    - descricao: Tecnologia que permite às máquinas realizar tarefas que requerem inteligência humana.
+
+    2. cod_tecnologia: 002
+    - nome: Blockchain
+    - area: Criptografia
+    - descricao: Um sistema descentralizado de registro que permite transações seguras e transparentes.
+
+    3. cod_tecnologia: 003
+    - nome: Realidade Aumentada
+    - area: Tecnologia da Informação
+    - descricao: Integra elementos virtuais em um ambiente real, fornecendo uma experiência aprimorada aos usuários.
+
+    *Empresa:*
+
+    1. cod_empresa: 101
+    - cnpj: 1234567890001
+    - nome: Tech Solutions Ltda.
+    - area_atuacao: Desenvolvimento de Software.
+    - endereco: Av. das Inovações, 123
+    - telefone: (11) 98765-4321
+    - email: contato@techsolutions.com
+
+    2. cod_empresa: 102
+    - cnpj: 9876543210001
+    - nome: FutureTech Inc.
+    - area_atuacao: Análise de Dados.
+    - endereco: Rua da Tecnologia, 456
+    - telefone: (21) 12345-6789
+    - email: info@futuretech.com
+
+    3. cod_empresa: 103
+    - cnpj: 5556667770001
+    - nome: DataTech Analytics
+    - area_atuacao: Engenharia de Dados.
+    - endereco: Praça da Ciência, 789
+    - telefone: (31) 55555-5555
+    - email: contato@datatech.com
+
+    *Colaborador:*
+
+    1. cod_colaborador: 201
+    - nome: Ana Silva
+    - cargo: Desenvolvedora de Software
+    - email: ana.silva@techsolutions.com
+    - setor: Departamento de Desenvolvimento
+    - cod_empresa: 101
+
+    2. cod_colaborador: 202
+    - nome: Carlos Oliveira
+    - cargo: Analista de Dados
+    - email: carlos.oliveira@futuretech.com
+    - setor: Departamento de Análise
+    - cod_empresa: 102
+
+    3. cod_colaborador: 203
+    - nome: Maria Santos
+    - cargo: Engenheira de Dados
+    - email: maria.santos@datatech.com
+    - setor: Departamento de Engenharia
+    - cod_empresa: 103
